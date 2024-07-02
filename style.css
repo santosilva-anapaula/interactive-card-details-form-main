@@ -32,7 +32,7 @@ body {
     min-height: 100vh;
 }
 
-.container-card {
+.mobile {
     background-image: url(./images/bg-main-mobile.png);
     background-repeat: no-repeat;
     background-position:  center top;
@@ -176,6 +176,15 @@ body {
     grid-area: 2 / 3 / 3 / 5;
 }
 
+.error {
+    border: 1px solid var(--primary-error);
+}
+
+.error-message {
+    color: var(--primary-error);
+    padding-top: 0.3rem;
+}
+
 .button {
     margin: 2rem 0;
     padding: 1rem;
@@ -187,7 +196,7 @@ body {
     border-radius: 0.4rem;
 }
 
-.Completed-state {
+.completed-state {
     margin-top: 3rem;
     height: 100%;
     width: 100%;
@@ -252,15 +261,16 @@ footer {
 /* Small devices such as large phones (640px and up) */
 @media only screen and (min-width: 640px) {
     .card-back, .card-front  {
-        max-width: 70%;
+        max-width: 60%;
     }
 
-    .container-card, .form, .Completed-state {        
+    .mobile, .form, .completed-state {        
         padding: 3rem 2rem 0;
     }
 
     #card-cvc-back {
         font-size: 1.3rem;
+        right: 10%;
     }
 
     #card-number-front {
@@ -277,6 +287,10 @@ footer {
         margin-bottom: 0.3rem;
     }
 
+    .completed-state {
+        max-width: 80%;
+    }
+
     .attribution { 
         font-size: 13px;
     }
@@ -284,23 +298,80 @@ footer {
 
 /* Medium devices such as tablets (768px and up) */
 @media only screen and (min-width: 768px) {
-    .card-back, .card-front  {
+    /* .card-back, .card-front  {
         max-width: 60%;
-    }
+    } */
 
-    .container-card {        
+    .mobile {        
         padding: 4rem 4rem 0;
     }
     
-    .form, .Completed-state {
+    .form, .completed-state {
         padding: 2rem 4rem;
     }
     
     #card-cvc-back {
-        right: 13.2%;
+        right: 14%;
     }
 }
 
 /* Large devices such as laptops (1024px and up) */
 @media only screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .desktop {
+        grid-area: 1 / 1 / 4 / 2;
+
+        background-image: url(./images/bg-main-desktop.png);
+        background-position:  left center;
+        background-size: 70% 100%;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 0 20%;
+        margin: 10% 0;
+    }
+
+    .card-back {
+        max-width: 80%;
+        margin-top: 6%;
+    }
+
+    #card-cvc-back {
+        right: 15%;
+    }
+
+    .card-front {
+        max-width: 80%;
+        order: -1;
+        margin-top: 6%;
+    }
+
+    .form, .completed-state {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+
+    .completed-state {
+        width: 60%;
+        margin: 1rem auto;
+        height: 50%;
+        justify-content: center;
+        padding: 0;
+    }
+
+    footer {
+        grid-area: 3 / 2 / 4 / 3;
+        width: 100%;
+        padding: 2rem 0;
+    }
 }
