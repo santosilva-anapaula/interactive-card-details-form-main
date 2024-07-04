@@ -34,11 +34,11 @@
 
   <form class="form ">
     <label for="name-form" class="label-form">Cardholder name</label>
-    <input type="text" id="name-form" class="input-form" placeholder="e.g. Jane Appleseed">
+    <input type="text" id="name-form" name="name-form" class="input-form" placeholder="e.g. Jane Appleseed">
     <span class="error-message" id="name-error"></span>
 
     <label for="number-form" class="label-form">Card number</label>
-    <input type="text" id="number-form" class="input-form" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+    <input type="text" id="number-form" name="number-form" class="input-form" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
     <span class="error-message" id="number-error"></span>
 
     <div class="date-cvc">
@@ -50,7 +50,7 @@
       <span class="error-message" id="year-error"></span>
 
       <label for="cvc-form" class="label-form label-cvc">CVC</label>
-      <input type="number" placeholder="e.g. 123" id="cvc-form" class="input-form">
+      <input type="number" placeholder="e.g. 123" id="cvc-form" name="cvc-form" class="input-form">
 
       <span class="error-message" id="cvc-error"></span>
     </div>
