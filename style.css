@@ -56,7 +56,7 @@ body {
     width: 100%;
 }
 
-#card-cvc-back {
+#card-cvc {
     position: absolute;
     text-align: right;
     right: 12%;
@@ -97,18 +97,18 @@ body {
     
 }
 
-#card-number-front {
+#card-number {
     width: 100%;
     margin-top: 2rem;
 }
 
-#cardolder-name-front {
+#cardholder-name {
     margin-top: 0.5rem;
     font-size: 0.7rem;
     text-transform: uppercase;
 }
 
-#card-date-front {
+#card-date {
     font-size: 0.7rem;
 }
 
@@ -172,7 +172,7 @@ body {
     width: 100%;
 }
 
-#card-cvc-form {
+#cvc-form {
     grid-area: 2 / 3 / 3 / 5;
 }
 
@@ -183,6 +183,7 @@ body {
 .error-message {
     color: var(--primary-error);
     padding-top: 0.3rem;
+    font-size: 0.9rem;
 }
 
 .button {
@@ -194,6 +195,13 @@ body {
     background-color: var(--neutral-very-dark);
     border: none;
     border-radius: 0.4rem;
+    transition: 0.5s;
+}
+
+.button:hover{
+    scale: 1.02;
+    filter: brightness(160%);
+    cursor: pointer;
 }
 
 .completed-state {
@@ -227,7 +235,7 @@ body {
     color: var(--neutral-dark-grayish);
 }
 
-#button-completed-state {
+#button-completed {
     width: 100%;
     margin: 3rem 0;
 }
@@ -249,11 +257,11 @@ footer {
 
 /* Small devices such as large phones (480px and up) */
 @media only screen and (min-width: 480px) {
-    #card-cvc-back {
+    #card-cvc {
         font-size: 1rem;
     }
 
-    #card-number-front {
+    #card-number {
         font-size: 1.4rem;
     }
 }
@@ -268,21 +276,21 @@ footer {
         padding: 3rem 2rem 0;
     }
 
-    #card-cvc-back {
+    #card-cvc {
         font-size: 1.3rem;
         right: 10%;
     }
 
-    #card-number-front {
+    #card-number {
         font-size: 1.6rem;
     }
 
-    #cardolder-name-front {
+    #cardholder-name {
         font-size: 1rem;
         margin-bottom: 0.3rem;
     }
     
-    #card-date-front {
+    #card-date {
         font-size: 1rem;
         margin-bottom: 0.3rem;
     }
@@ -310,7 +318,7 @@ footer {
         padding: 2rem 4rem;
     }
     
-    #card-cvc-back {
+    #card-cvc {
         right: 14%;
     }
 }
@@ -347,7 +355,7 @@ footer {
         margin-top: 6%;
     }
 
-    #card-cvc-back {
+    #card-cvc {
         right: 15%;
     }
 
@@ -357,11 +365,15 @@ footer {
         margin-top: 6%;
     }
 
-    .form, .completed-state {
+    .form {
         grid-area: 1 / 2 / 3 / 3;
+        margin: auto;
+        padding: 0 15%;
     }
 
     .completed-state {
+        grid-area: 1 / 2 / 3 / 3;
+
         width: 60%;
         margin: 1rem auto;
         height: 50%;
